@@ -13,9 +13,9 @@
 #
 # Location of folders
 #
-export readonly DEPLOYMENT_LOCATION='/home/github_action/public'
-export readonly WEB_PATH='/var/www/public'
-readonly SCRIPT_LOCATION="$(pwd)"
+export readonly DEPLOYMENT_LOCATION=
+export readonly WEB_PATH=
+readonly SCRIPT_LOCATION=
 
 
 # Set up logging
@@ -61,8 +61,8 @@ fi
 log "[i] Moving the deployment to the ${WEB_PATH}" 'g'
 mv "${DEPLOYMENT_LOCATION}" "${WEB_PATH}" 
 log "[i] Giving the files appropriate permissions" 'g'
-chown apache:apache "${WEB_PATH}"
-chown 700 "${WEB_PATH}"
+chown -R apache:apache "${WEB_PATH}"
+chmod 700 "${WEB_PATH}"
 log "[i] Starting Apache" 'g'
 systemctl start httpd
 
