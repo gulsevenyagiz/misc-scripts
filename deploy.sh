@@ -64,6 +64,6 @@ log "[i] Giving the files appropriate permissions" 'g'
 chown apache:apache "${WEB_PATH}"
 chown 700 "${WEB_PATH}"
 log "[i] Starting Apache" 'g'
-systmectl start httpd
+systemctl start httpd
 
 
