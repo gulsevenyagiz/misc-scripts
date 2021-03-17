@@ -43,7 +43,7 @@ function log {
 ## Stop apache
 systemctl stop httpd
 
-if [[ "${&?}" -ne 0 ]]
+if [[ $?  -ne 0 ]]
     then
     log "[!!!] Could not stop to be not apache. This state is not supported. Exiting ... " 'r'
 fi
